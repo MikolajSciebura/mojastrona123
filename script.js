@@ -1,42 +1,134 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggle
+    // 1. Mobile Menu & Overlay
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    const overlay = document.querySelector('.overlay');
-    const header = document.querySelector('header');
+    const overlay = document.querySelector('.rs-overlay');
+    const header = document.querySelector('.rs-header');
+    const navLinks = document.querySelector('.rs-nav ul');
 
-    if (menuToggle && nav && overlay) {
+    if (menuToggle && overlay) {
         const toggleMenu = () => {
             menuToggle.classList.toggle('active');
-            nav.classList.toggle('active');
             overlay.classList.toggle('active');
-            if (header) header.classList.toggle('menu-open');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+            header.classList.toggle('menu-open');
+
+            if (overlay.classList.contains('active')) {
+                // Clone nav links into overlay for mobile
+                if (!overlay.querySelector('ul')) {
+                    const mobileNav = navLinks.cloneNode(true);
+                    overlay.appendChild(mobileNav);
+                    mobileNav.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', toggleMenu);
+                    });
+                }
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         };
 
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
-        overlay.addEventListener('click', toggleMenu);
-
-        // Close menu on link click
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (nav.classList.contains('active')) {
-                    toggleMenu();
-                }
-            });
-        });
+        menuToggle.addEventListener('click', toggleMenu);
     }
 
-    // 2. Car Valuation Form (Skup Aut)
+    // 2. Parallax Shards Effect
+    const shards = document.querySelectorAll('.shard-layer');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        shards.forEach((shard, index) => {
+            const speed = (index + 1) * 0.1;
+            shard.style.transform = `translateY(${scrollY * speed}px)`;
+        });
+    }, { passive: true });
+
+    // 3. Header Scroll Effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }, { passive: true });
+
+    // 4. Custom AOS (Intersection Observer)
+    const initCustomAOS = () => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-aos-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('aos-animate');
+                    }, delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-aos-custom]').forEach(el => {
+            observer.observe(el);
+        });
+    };
+    initCustomAOS();
+
+    // 5. Testimonial Slider (Existing logic adapted)
+    const initSlider = (selector) => {
+        const slider = document.querySelector(selector);
+        if (!slider) return;
+
+        const track = slider.querySelector('.slider-track');
+        const items = slider.querySelectorAll('.slider-item');
+        const pagination = slider.querySelector('.slider-pagination');
+        if (!track || items.length === 0) return;
+
+        let currentIndex = 0;
+
+        const createDots = () => {
+            if (!pagination) return;
+            items.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('slider-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => scrollTo(i));
+                pagination.appendChild(dot);
+            });
+        };
+
+        const updateDots = (index) => {
+            if (!pagination) return;
+            pagination.querySelectorAll('.slider-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        };
+
+        const scrollTo = (index) => {
+            currentIndex = index;
+            const itemWidth = items[0].offsetWidth;
+            track.scrollTo({
+                left: itemWidth * index,
+                behavior: 'smooth'
+            });
+            updateDots(index);
+        };
+
+        createDots();
+
+        // Auto play
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % items.length;
+            scrollTo(currentIndex);
+        }, 5000);
+    };
+    initSlider('.testimonials-slider');
+
+    // 6. Car Valuation Form & Image Compression (Preserving original logic)
     const valuationForm = document.getElementById('valuation-form');
     const fileInput = document.getElementById('car-photos');
     const previewContainer = document.getElementById('file-preview-container');
 
     if (valuationForm) {
-        // Photo Preview
         if (fileInput && previewContainer) {
             fileInput.addEventListener('change', () => {
                 previewContainer.innerHTML = '';
@@ -46,8 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         reader.onload = (e) => {
                             const img = document.createElement('img');
                             img.src = e.target.result;
-                            img.style.width = "100px";
-                            img.style.borderRadius = "5px";
+                            img.style.width = "60px";
+                            img.style.height = "60px";
+                            img.style.objectFit = "cover";
+                            img.style.borderRadius = "4px";
                             previewContainer.appendChild(img);
                         };
                         reader.readAsDataURL(file);
@@ -56,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Image Compression
         async function compressImage(file) {
             return new Promise(resolve => {
                 const reader = new FileReader();
@@ -83,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Submit Valuation
         valuationForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = valuationForm.querySelector('.btn-submit');
@@ -92,25 +184,12 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
             const originalText = btn.textContent;
             btn.textContent = 'Wysyłanie...';
-            msgDiv.textContent = '';
-            msgDiv.className = 'form-message';
 
-            const formData = new FormData();
-            formData.append('form-type', 'valuation');
-            formData.append('brand-model', valuationForm['brand-model'] ? valuationForm['brand-model'].value : '');
-            formData.append('year', valuationForm['year'] ? valuationForm['year'].value : '');
-            formData.append('mileage', valuationForm['mileage'] ? valuationForm['mileage'].value : '');
-            formData.append('engine', valuationForm['engine'] ? valuationForm['engine'].value : '');
-            formData.append('fuel', valuationForm['fuel'] ? valuationForm['fuel'].value : '');
-            formData.append('gearbox', valuationForm['gearbox'] ? valuationForm['gearbox'].value : '');
-            formData.append('damaged', valuationForm['damaged'] && valuationForm['damaged'].checked ? 'Tak' : 'Nie');
-            formData.append('description', valuationForm['description'] ? valuationForm['description'].value : '');
-            formData.append('phone', valuationForm['phone'] ? valuationForm['phone'].value : '');
-            formData.append('website', valuationForm['website'] ? valuationForm['website'].value : '');
+            const formData = new FormData(valuationForm);
 
             if (fileInput && fileInput.files.length > 0) {
-                const files = fileInput.files;
-                for (let file of files) {
+                formData.delete('photos[]');
+                for (let file of fileInput.files) {
                     const compressed = await compressImage(file);
                     formData.append('photos[]', compressed, file.name);
                 }
@@ -121,16 +200,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const text = await res.text();
                 if (text === "OK") {
                     msgDiv.textContent = '✅ Wysłano pomyślnie!';
-                    msgDiv.classList.add('success');
+                    msgDiv.className = 'form-message success';
                     valuationForm.reset();
                     if (previewContainer) previewContainer.innerHTML = '';
                 } else {
                     msgDiv.textContent = '❌ ' + text;
-                    msgDiv.classList.add('error');
+                    msgDiv.className = 'form-message error';
                 }
             } catch {
                 msgDiv.textContent = '❌ Błąd połączenia';
-                msgDiv.classList.add('error');
+                msgDiv.className = 'form-message error';
             }
 
             btn.disabled = false;
@@ -138,263 +217,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Contact Form
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('.btn-submit');
-            const msgDiv = contactForm.querySelector('#form-message');
-
-            btn.disabled = true;
-            const originalText = btn.textContent;
-            btn.textContent = 'Wysyłanie...';
-            msgDiv.textContent = '';
-            msgDiv.className = 'form-message';
-
-            const formData = new FormData(contactForm);
-
-            try {
-                const res = await fetch('send.php', { method: 'POST', body: formData });
-                const text = await res.text();
-                if (text === "OK") {
-                    msgDiv.textContent = '✅ Wiadomość wysłana!';
-                    msgDiv.classList.add('success');
-                    contactForm.reset();
-                } else {
-                    msgDiv.textContent = '❌ ' + text;
-                    msgDiv.classList.add('error');
-                }
-            } catch {
-                msgDiv.textContent = '❌ Błąd połączenia';
-                msgDiv.classList.add('error');
-            }
-
-            btn.disabled = false;
-            btn.textContent = originalText;
+    // 7. FAQ Toggle
+    document.querySelectorAll('.rs-faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            item.classList.toggle('active');
         });
-    }
+    });
 
-    // 4. Smooth Scrolling
+    // 8. Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (nav && nav.classList.contains('active')) {
-                    toggleMenu();
-                }
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
-    });
-
-    // 5. Header Scroll Effect
-    let headerScrollTimeout;
-    window.addEventListener('scroll', () => {
-        if (headerScrollTimeout) return;
-        headerScrollTimeout = requestAnimationFrame(() => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            headerScrollTimeout = null;
-        });
-    }, { passive: true });
-
-    // 6. Initialize Sliders & AOS
-    initCustomSlider('.testimonials-slider');
-    initCustomSlider(".buys-slider");
-    initCustomAOS();
-
-    // 7. Defer non-critical CSS (Final Optimization)
-    const links = document.querySelectorAll('link[media="print"]');
-    links.forEach(link => {
-        link.media = 'all';
     });
 });
-
-/**
- * Custom Slider Logic
- */
-function initCustomSlider(sliderSelector) {
-    const slider = document.querySelector(sliderSelector);
-    if (!slider) return;
-
-    const track = slider.querySelector('.slider-track');
-    const items = slider.querySelectorAll('.slider-item');
-    const pagination = slider.querySelector('.slider-pagination');
-    if (!track || items.length === 0) return;
-
-    let currentIndex = 0;
-    let autoplayInterval;
-    let trackWidth = 0;
-    let itemWidth = 0;
-    let itemOffsets = [];
-
-    function updateDimensions() {
-        trackWidth = track.offsetWidth;
-        itemWidth = items[0].offsetWidth;
-        itemOffsets = Array.from(items).map(item => item.offsetLeft);
-    }
-
-    function getItemsInView() {
-        return Math.round(trackWidth / itemWidth) || 1;
-    }
-
-    function getMaxIndex() {
-        return Math.max(0, items.length - getItemsInView());
-    }
-
-    function createPagination() {
-        if (!pagination) return;
-        pagination.innerHTML = '';
-        const maxIndex = getMaxIndex();
-        for (let i = 0; i <= maxIndex; i++) {
-            const dot = document.createElement('button');
-            dot.classList.add('slider-dot');
-            if (i === currentIndex) dot.classList.add('active');
-            dot.setAttribute('aria-label', `Idź do slajdu ${i + 1}`);
-            dot.addEventListener('click', () => {
-                stopAutoplay();
-                scrollTo(i);
-                startAutoplay();
-            });
-            pagination.appendChild(dot);
-        }
-    }
-
-    function updatePagination(index) {
-        if (!pagination) return;
-        const dots = pagination.querySelectorAll('.slider-dot');
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
-    }
-
-    function scrollTo(index) {
-        const maxIndex = getMaxIndex();
-        if (index < 0) index = maxIndex;
-        if (index > maxIndex) index = 0;
-
-        currentIndex = index;
-        const scrollAmount = itemOffsets[currentIndex] || 0;
-        track.scrollTo({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-        updatePagination(currentIndex);
-    }
-
-    let scrollTimeout;
-    let isScrolling = false;
-
-    track.addEventListener('scroll', () => {
-        if (!isScrolling) {
-            window.requestAnimationFrame(() => {
-                const index = Math.round(track.scrollLeft / itemWidth);
-                const maxIndex = getMaxIndex();
-                const newIndex = Math.min(index, maxIndex);
-                if (newIndex !== currentIndex) {
-                    currentIndex = newIndex;
-                    updatePagination(currentIndex);
-                }
-                isScrolling = false;
-            });
-            isScrolling = true;
-        }
-    }, { passive: true });
-
-    function startAutoplay() {
-        stopAutoplay();
-        autoplayInterval = setInterval(() => {
-            scrollTo(currentIndex + 1);
-        }, 5000);
-    }
-
-    function stopAutoplay() {
-        clearInterval(autoplayInterval);
-    }
-
-    updateDimensions();
-    createPagination();
-    startAutoplay();
-
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            updateDimensions();
-            createPagination();
-            scrollTo(currentIndex);
-        }, 200);
-    }, { passive: true });
-
-    slider.addEventListener('mouseenter', stopAutoplay);
-    slider.addEventListener('mouseleave', startAutoplay);
-    slider.addEventListener('touchstart', stopAutoplay, { passive: true });
-    slider.addEventListener('touchend', startAutoplay, { passive: true });
-}
-
-/**
- * Google Tag Manager Delay Logic
- */
-function initGTM() {
-    const script = document.createElement('script');
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-DN23MHNYG7";
-    script.async = true;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DN23MHNYG7');
-}
-
-let gtmLoaded = false;
-function loadGTMOnInteraction() {
-    if (gtmLoaded) return;
-    gtmLoaded = true;
-    initGTM();
-    ['touchstart', 'mousemove', 'scroll', 'keydown'].forEach(event => {
-        window.removeEventListener(event, loadGTMOnInteraction);
-    });
-}
-
-['touchstart', 'mousemove', 'scroll', 'keydown'].forEach(event => {
-    window.addEventListener(event, loadGTMOnInteraction, { passive: true });
-});
-
-/**
- * Custom IntersectionObserver Animation Logic
- */
-function initCustomAOS() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const delay = entry.target.getAttribute('data-aos-delay') || 0;
-                setTimeout(() => {
-                    entry.target.classList.add('aos-animate');
-                }, delay);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('[data-aos-custom]').forEach(el => {
-        observer.observe(el);
-    });
-}
