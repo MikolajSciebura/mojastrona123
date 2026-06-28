@@ -2,11 +2,6 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomoc Drogowa, Laweta, Skup Aut Częstochowa | DAWDAN-CARS 24h</title>
-    <meta name="description" content="DAWDAN-CARS: Najlepsza pomoc drogowa Częstochowa, laweta oraz holowanie 24h. Oferujemy również szybki skup aut Częstochowa za gotówkę. Dojazd w 15 min! Sprawdź.">
-    <link rel="canonical" href="https://dawdan-cars.pl/">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,40 +26,93 @@
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
         ],
         "opens": "00:00",
         "closes": "23:59"
-      }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usługi Motoryzacyjne",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pomoc Drogowa Częstochowa"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laweta Częstochowa"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Holowanie Częstochowa"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Skup Aut Częstochowa"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Skup Samochodów Częstochowa"
+            }
+          }
+        ]
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Częstochowa"
+        },
+        {
+          "@type": "State",
+          "name": "Śląskie"
+        }
+      ]
     }
     </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomoc Drogowa, Laweta, Skup Aut Częstochowa | DAWDAN-CARS 24h</title>
+    <meta name="description" content="DAWDAN-CARS: Najlepsza pomoc drogowa Częstochowa, laweta oraz holowanie 24h. Oferujemy również szybki skup aut Częstochowa za gotówkę. Dojazd w 15 min! Sprawdź.">
+    <link rel="canonical" href="https://dawdan-cars.pl/">
 
-    <link rel="stylesheet" href="style.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="critical.min.css">
-    <noscript><link rel="stylesheet" href="style.min.css"></noscript>
-    <link rel="preload" as="style" href="style.min.css">
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="font-awesome.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="font-awesome.min.css"></noscript>
-
-    <link rel="preload" as="image" href="tlo.webp" fetchpriority="high" type="image/webp">
 
     <!-- ICONS -->
     <link rel="icon" href="favicony/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicony/favicon-180x180.png">
 
     <script src="script.min.js" defer></script>
 </head>
-<body class="rockstar-theme">
+<body class="rs-theme">
     <header class="rs-header">
         <div class="container-fluid">
             <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="logo.webp" fetchpriority="high" alt="DAWDAN-CARS" width="349" height="60">
+                        <img src="logo.webp" alt="DAWDAN-CARS">
                     </a>
                 </div>
                 <nav class="rs-nav">
@@ -84,6 +132,7 @@
                     <button class="menu-toggle" aria-label="Menu">
                         <span></span>
                         <span></span>
+                        <span></span>
                     </button>
                 </div>
             </div>
@@ -91,24 +140,26 @@
     </header>
 
     <main>
-        <!-- Hero Section with Shards -->
+        <!-- Cinematic Hero Section -->
         <section id="hero" class="rs-hero">
             <div class="shard-layer shard-1"></div>
             <div class="shard-layer shard-2"></div>
             <div class="shard-layer shard-3"></div>
 
             <div class="container hero-container">
-                <div class="hero-content-rs" data-aos-custom="fade-up">
-                    <div class="rs-tag">CZĘSTOCHOWA / ŚLĄSK</div>
-                    <h1 class="rs-title-main">DAWDAN <span class="outline">CARS</span></h1>
-                    <p class="rs-subtitle">POMOC DROGOWA • LAWETA • SKUP SAMOCHODÓW</p>
+                <div class="hero-content-rs">
+                    <div class="rs-tag" data-aos-custom="fade-up">EST. 2010 / CZĘSTOCHOWA</div>
+                    <div class="reveal-wrap">
+                        <h1 class="rs-title-main reveal-text">DAWDAN <span class="outline">CARS</span></h1>
+                    </div>
+                    <p class="rs-subtitle" data-aos-custom="fade-up" data-aos-delay="400">POMOC DROGOWA, LAWETA & SKUP AUT CZĘSTOCHOWA</p>
 
-                    <div class="rs-hero-actions">
+                    <div class="rs-hero-actions" data-aos-custom="fade-up" data-aos-delay="600">
                         <a href="tel:+48790676446" class="rs-btn rs-btn-large">
                             <span class="rs-btn-inner">POMOC DROGOWA 24H</span>
                         </a>
-                        <a href="skup-samochodow.html" class="rs-btn rs-btn-outline rs-btn-large">
-                            <span class="rs-btn-inner">WYCENA ONLINE</span>
+                        <a href="tel:+48730035559" class="rs-btn rs-btn-outline rs-btn-large">
+                            <span class="rs-btn-inner">SKUP SAMOCHODÓW</span>
                         </a>
                     </div>
                 </div>
@@ -119,47 +170,52 @@
             </div>
         </section>
 
-        <!-- Primary Services Grid -->
+        <!-- Dynamic Grid -->
         <section class="rs-section rs-services">
             <div class="container">
                 <div class="rs-grid">
-                    <div class="rs-card service-card big" data-aos-custom="fade-right">
+                    <div class="rs-card service-card big" data-aos-custom="fade-up">
                         <div class="card-bg" style="background-image: url('tlo.webp')"></div>
                         <div class="card-content">
-                            <h2 class="rs-title-card">SKUP SAMOCHODÓW</h2>
-                            <p>Gotówka od ręki, najlepsze ceny w regionie. Dojazd do klienta w 15 minut!</p>
-                            <a href="skup-samochodow.html" class="rs-btn rs-btn-small"><span>SZCZEGÓŁY</span></a>
+                            <div class="rs-tag">QUICK CASH</div>
+                            <h2 class="rs-title-card">SKUP <span class="highlight">SAMOCHODÓW</span></h2>
+                            <p>Częstochowa, ŚLĄSK. Najlepsze ceny | Gotówka od ręki | Szybko | Dojazd GRATIS!</p>
+                            <a href="skup-samochodow.html" class="rs-btn rs-btn-outline"><span>SZCZEGÓŁY</span></a>
                         </div>
                     </div>
-                    <div class="rs-card service-card small" data-aos-custom="fade-left">
+                    <div class="rs-card service-card small" data-aos-custom="fade-up" data-aos-delay="200">
+                        <div class="card-bg" style="background-image: url('tlo.webp'); filter: brightness(0.3) grayscale(1);"></div>
                         <div class="card-content">
-                            <h2 class="rs-title-card">POMOC DROGOWA 24/7</h2>
-                            <p>Laweta, awaryjne odpalanie, dowóz paliwa.</p>
-                            <a href="tel:+48790676446" class="rs-link">ZADZWOŃ TERAZ →</a>
+                            <div class="rs-tag">24/7 SUPPORT</div>
+                            <h2 class="rs-title-card" style="font-size: 2rem;">POMOC DROGOWA</h2>
+                            <p>Laweta 24h, Odpalanie Aut, Dowóz Paliwa. Szybka reakcja!</p>
+                            <a href="tel:+48790676446" class="rs-link highlight">790 676 446 →</a>
                         </div>
                     </div>
-                    <div class="rs-card service-card small alt-color" data-aos-custom="fade-up">
+                    <div class="rs-card service-card small" data-aos-custom="fade-up" data-aos-delay="400" style="background: var(--primary-color);">
                         <div class="card-content">
-                            <h2 class="rs-title-card">HOLOWANIE A1 / DK1</h2>
-                            <p>Błyskawiczna pomoc na trasie.</p>
-                            <a href="laweta-pomoc-drogowa.html" class="rs-link">WIĘCEJ →</a>
+                            <div class="rs-tag" style="color: #000;">ROADSIDE</div>
+                            <h2 class="rs-title-card" style="font-size: 2rem; color: #000;">HOLOWANIE A1</h2>
+                            <p style="color: #000;">Błyskawiczna pomoc na trasie i autostradach DK1 / A1.</p>
+                            <a href="laweta-pomoc-drogowa.html" class="rs-link" style="color: #000; border-bottom: 2px solid #000;">WIĘCEJ →</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefits with High Impact Text -->
+        <!-- Benefits with Motion -->
         <section class="rs-section rs-benefits bg-dark-rs">
             <div class="container">
                 <div class="rs-split">
-                    <div class="rs-text-block" data-aos-custom="fade-right">
-                        <h2 class="rs-title-section">DLACZEGO <span class="highlight">MY?</span></h2>
+                    <div class="rs-text-block">
+                        <div class="rs-tag" data-aos-custom="fade-right">ELITE SERVICES</div>
+                        <h2 class="rs-title-section" data-aos-custom="fade-right">DLACZEGO WARTO WYBRAĆ <span class="outline">DAWDAN-CARS?</span></h2>
                         <ul class="rs-list">
-                            <li><span class="rs-num">01</span> GWARANCJA UCZCIWEJ CENY</li>
-                            <li><span class="rs-num">02</span> SZYBKI DOJAZD GRATIS!</li>
-                            <li><span class="rs-num">03</span> GOTÓWKA DO RĘKI</li>
-                            <li><span class="rs-num">04</span> PROFESJONALNA LAWETA 24/7</li>
+                            <li data-aos-custom="fade-right" data-aos-delay="100"><span class="rs-num">01</span> GWARANCJA UCZCIWEJ CENY</li>
+                            <li data-aos-custom="fade-right" data-aos-delay="200"><span class="rs-num">02</span> SZYBKI DOJAZD GRATIS!</li>
+                            <li data-aos-custom="fade-right" data-aos-delay="300"><span class="rs-num">03</span> GOTÓWKA DO RĘKI</li>
+                            <li data-aos-custom="fade-right" data-aos-delay="400"><span class="rs-num">04</span> PROFESJONALNA LAWETA 24/7</li>
                         </ul>
                     </div>
                     <div class="rs-media-block" data-aos-custom="fade-left">
@@ -171,40 +227,90 @@
             </div>
         </section>
 
-        <!-- SEO Content Block -->
+        <!-- Cinematic Text Block -->
         <section class="rs-section rs-content-block">
             <div class="container">
-                <div class="rs-text-wrap" data-aos-custom="fade-up">
-                    <h2 class="rs-title-small">Skup samochodów i pomoc drogowa w Częstochowie</h2>
-                    <p>Szukasz sprawdzonego <strong>skupu aut w Częstochowie</strong>? DAWDAN-CARS to firma z wieloletnim doświadczeniem, która łączy w sobie profesjonalny autokomis oraz niezawodne usługi holowania. Nasza <strong>laweta Częstochowa</strong> jest dostępna o każdej porze dnia i nocy, 365 dni w roku.</p>
-                    <p>Jako liderzy w branży, zapewniamy usługi na najwyższym poziomie. Jeśli Twoje auto odmówiło posłuszeństwa na środku skrzyżowania lub na autostradzie, oferujemy błyskawiczne <strong>holowanie Częstochowa</strong> oraz pomoc w okolicznych miejscowościach.</p>
-                    <a href="o-nas.html" class="rs-btn rs-btn-outline"><span>CZYTAJ WIĘCEJ</span></a>
+                <div class="rs-text-wrap">
+                    <h2 class="rs-title-section" data-aos-custom="fade-up">Skup samochodów i pomoc drogowa w Częstochowie – <span class="highlight">Twoje wsparcie 24/7</span></h2>
+                    <div data-aos-custom="fade-up" class="rs-seo-content">
+                        <p>Szukasz sprawdzonego <strong>skupu aut w Częstochowie</strong>? A może potrzebna Ci błyskawiczna <strong>pomoc drogowa</strong> lub <strong>laweta</strong>? DAWDAN-CARS to firma z wieloletnim doświadczeniem, która łączy w sobie profesjonalny <strong>autokomis</strong> oraz niezawodne usługi holowania. Nasz <strong>skup samochodów Częstochowa</strong> oferuje najlepsze stawki na rynku, bezpłatny dojazd do klienta i gotówkę wypłacaną od ręki. Działamy na terenie całego miasta i powiatu częstochowskiego, zapewniając kompleksowe wsparcie każdemu kierowcy.</p>
+
+                        <p>Jako liderzy w branży, zapewniamy usługi na najwyższym poziomie. Nasza <strong>laweta Częstochowa</strong> jest dostępna o każdej porze dnia i nocy, 365 dni w roku. Jeśli Twoje auto odmówiło posłuszeństwa na środku skrzyżowania lub na autostradzie, oferujemy błyskawiczne <strong>holowanie Częstochowa</strong> oraz pomoc w okolicznych miejscowościach. Nasz <strong>skup aut</strong> przyjmuje pojazdy w każdym stanie technicznym – skupujemy auta sprawne, uszkodzone, powypadkowe, a nawet te bez ważnego przeglądu technicznego czy aktualnego ubezpieczenia OC. Dla nas nie ma rzeczy niemożliwych!</p>
+
+                        <h3>Najlepszy Skup Aut Częstochowa i okolice – dlaczego warto nam zaufać?</h3>
+                        <p>Nasz <strong>skup aut Częstochowa</strong> to gwarancja bezpieczeństwa i uczciwości. Jeśli posiadasz auto, którego chcesz się szybko pozbyć, a nie masz czasu na uciążliwe spotkania z prywatnymi kupcami, nasz <strong>autokomis Częstochowa</strong> jest idealnym rozwiązaniem. Skupujemy samochody osobowe, dostawcze, a także terenowe i busy. Zapewniamy pełną dokumentację wymaganą przez wydział komunikacji oraz ubezpieczalnię, a także błyskawiczną płatność gotówką. <strong>Skup samochodów Częstochowa</strong> to nasza specjalność od lat – zaufały nam już tysiące klientów z całego regionu. Pomagamy również w trudnych przypadkach, np. gdy interesuje Cię <a href="sprzedaz-auta-bez-dowodu-rejestracyjnego.html">sprzedaż auta bez dowodu rejestracyjnego</a>.</p>
+
+                        <p>Wyróżnia nas indywidualne podejście do każdej wyceny. Nie korzystamy z sztywnych tabel – bierzemy pod uwagę realny stan Twojego pojazdu, dodatkowe wyposażenie oraz aktualną sytuację na rynku motoryzacyjnym. Dzięki temu nasz <strong>skup samochodów Częstochowa</strong> może zaoferować najwyższe stawki, które zadowolą nawet najbardziej wymagających właścicieli aut.</p>
+
+                        <h3>Całodobowa Pomoc Drogowa Częstochowa i holowanie 24h</h3>
+                        <p>Nagła awaria na drodze? Kolizja lub stłuczka? Nasza <strong>pomoc drogowa Częstochowa</strong> działa non-stop, 24 godziny na dobę. Dysponujemy nowoczesną flotą pojazdów, dzięki czemu każda <strong>laweta Częstochowa</strong> wysyłana do klienta jest w pełni przygotowana do bezpiecznego transportu pojazdu, niezależnie od stopnia jego uszkodzenia. Oferujemy nie tylko standardowe <strong>holowanie Częstochowa</strong>, ale również szeroki wachlarz usług dodatkowych: drobne naprawy na miejscu (tzw. mobilny serwis), awaryjne odpalanie silnika z boostera, dowóz paliwa czy wymianę koła na trasie. Jeśli zastanawiasz się, <a href="ile-kosztuje-laweta-czestochowa.html">ile kosztuje laweta w Częstochowie</a>, u nas transparentną wycenę otrzymasz od razu podczas rozmowy telefonicznej.</p>
+
+                        <p>Specjalizujemy się w obsłudze kluczowych węzłów komunikacyjnych w okolicach Częstochowy. Jeśli potrzebna jest <strong>pomoc drogowa A1</strong> lub <strong>laweta na trasie DK1</strong> (Gierkówka), nasi kierowcy dotrą do Ciebie w ekspresowym tempie. Wiemy, jak stresujące są sytuacje drogowe, dlatego dbamy o pełen profesjonalizm i kulturę osobistą naszych pracowników.</p>
+
+                        <h3>Dlaczego DAWDAN-CARS to numer 1 w Częstochowie?</h3>
+                        <ul>
+                            <li><strong>Skup aut Częstochowa</strong> – kupujemy wszystkie marki (Audi, BMW, Mercedes, VW, Toyota i inne) za gotówkę.</li>
+                            <li><strong>Autokomis Częstochowa</strong> – profesjonalne podejście, minimum formalności i uczciwe wyceny.</li>
+                            <li><strong>Skup samochodów Częstochowa</strong> – najszybszy dojazd do klienta i darmowa wycena na miejscu.</li>
+                            <li><strong>Pomoc drogowa Częstochowa</strong> – błyskawiczna reakcja w przypadku awarii, kolizji lub wypadku (24/7).</li>
+                            <li><strong>Laweta Częstochowa</strong> – bezpieczny i profesjonalny transport pojazdów osobowych, SUV-ów i dostawczych.</li>
+                            <li><strong>Holowanie Częstochowa</strong> – tanie i pewne usługi holownicze w regionie i na trasach szybkiego ruchu.</li>
+                            <li><strong>Skup aut uszkodzonych</strong> – interesują nas również pojazdy po wypadkach, pożarach czy zalaniach.</li>
+                        </ul>
+
+                        <p>Nasza firma świadczy usługi na terenie całej Częstochowy. Niezależnie od tego, w której dzielnicy się znajdujesz, nasz <strong>skup samochodów</strong> lub <strong>laweta</strong> dotrze do Ciebie w rekordowym czasie.</p>
+                        <div class="rs-districts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; font-size: 0.9rem; color: var(--text-dim);">
+                            <ul class="rs-list" style="margin: 0;">
+                                <li><strong>Północ</strong> (skup aut i pomoc drogowa)</li>
+                                <li><strong>Tysiąclecie</strong> (szybka laweta 24h)</li>
+                                <li><strong>Raków</strong> (skup samochodów za gotówkę)</li>
+                                <li><strong>Stare Miasto</strong> (holowanie i pomoc drogowa)</li>
+                                <li><strong>Śródmieście</strong> (skup aut Częstochowa)</li>
+                                <li><strong>Stradom</strong> (tania laweta Częstochowa)</li>
+                            </ul>
+                            <ul class="rs-list" style="margin: 0;">
+                                <li><strong>Wrzosowiak</strong> (pomoc drogowa i skup aut)</li>
+                                <li><strong>Błeszno</strong> (holowanie autostrada A1)</li>
+                                <li><strong>Pogoń</strong> (skup samochodów używanych)</li>
+                                <li><strong>Lisiniec</strong> (laweta i pomoc drogowa)</li>
+                                <li><strong>Dźbów</strong> (skup aut uszkodzonych)</li>
+                                <li><strong>Kiedrzyn</strong> (pomoc drogowa 24/7)</li>
+                            </ul>
+                        </div>
+                        <p>Działamy również w miejscowościach ościennych: <strong>Blachownia, Kłobuck, Mstów, Konopiska, Poczesna, Olsztyn, Mykanów</strong> oraz na całej długości <strong>autostrady A1</strong> w okolicach Częstochowy.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Blog/News Section -->
+        <!-- News/Grid Layout -->
         <section class="rs-section rs-news bg-dark-rs">
             <div class="container">
-                <h2 class="rs-title-section text-center">BLOG I <span class="highlight">PORADY</span></h2>
+                <div class="rs-header-flex" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px;">
+                    <h2 class="rs-title-section" style="margin-bottom: 0;">BLOG I <span class="outline">PORADY</span></h2>
+                    <a href="blog.html" class="rs-link">WSZYSTKIE WPISY →</a>
+                </div>
                 <div class="rs-grid-news">
-                    <article class="rs-news-card" data-aos-custom="fade-up" data-aos-delay="100">
+                    <article class="rs-news-card" data-aos-custom="fade-up">
                         <div class="news-img" style="background-image: url('tlo.webp')"></div>
-                        <div class="news-meta">15 MARCA 2024</div>
+                        <div class="news-meta">UPDATE / 2024</div>
                         <h3>Skup aut Częstochowa za gotówkę</h3>
-                        <a href="skup-samochodow-czestochowa-gotowka.html" class="rs-news-link">CZYTAJ →</a>
+                        <p>Szybka wycena i gotówka od ręki. Dowiedz się dlaczego warto sprzedać auto właśnie nam.</p>
+                        <a href="skup-samochodow-czestochowa-gotowka.html" class="rs-news-link">CZYTAJ WIĘCEJ →</a>
                     </article>
                     <article class="rs-news-card" data-aos-custom="fade-up" data-aos-delay="200">
                         <div class="news-img" style="background-image: url('tlo.webp')"></div>
-                        <div class="news-meta">10 MARCA 2024</div>
+                        <div class="news-meta">SERVICE / 24H</div>
                         <h3>Laweta i Pomoc Drogowa 24h</h3>
-                        <a href="pomoc-drogowa-laweta-czestochowa-24h.html" class="rs-news-link">CZYTAJ →</a>
+                        <p>Profesjonalne holowanie i laweta Częstochowa. Zobacz zakres naszych usług drogowych.</p>
+                        <a href="pomoc-drogowa-laweta-czestochowa-24h.html" class="rs-news-link">CZYTAJ WIĘCEJ →</a>
                     </article>
-                    <article class="rs-news-card" data-aos-custom="fade-up" data-aos-delay="300">
+                    <article class="rs-news-card" data-aos-custom="fade-up" data-aos-delay="400">
                         <div class="news-img" style="background-image: url('tlo.webp')"></div>
-                        <div class="news-meta">05 MARCA 2024</div>
+                        <div class="news-meta">TIPS / ADVICE</div>
                         <h3>Jak przygotować auto do skupu?</h3>
-                        <a href="skup-aut-porady.html" class="rs-news-link">CZYTAJ →</a>
+                        <p>Praktyczne wskazówki, które pomogą Ci uzyskać lepszą cenę w skupie aut Częstochowa.</p>
+                        <a href="skup-aut-porady.html" class="rs-news-link">CZYTAJ WIĘCEJ →</a>
                     </article>
                 </div>
             </div>
@@ -215,19 +321,8 @@
             <div class="container">
                 <div class="rs-testimonial-slider" data-aos-custom="fade-up">
                     <div class="rs-quote-icon">“</div>
-                    <div class="testimonials-slider">
-                        <div class="slider-track">
-                            <div class="slider-item">
-                                <p class="rs-quote">"Szybka i profesjonalna obsługa. Skupili moje auto w ciągu 2 godzin od zgłoszenia. Polecam!"</p>
-                                <span class="rs-author">Marek Z.</span>
-                            </div>
-                            <div class="slider-item">
-                                <p class="rs-quote">"Laweta przyjechała błyskawicznie po awarii na trasie. Bardzo miła obsługa i uczciwa cena."</p>
-                                <span class="rs-author">Anna K.</span>
-                            </div>
-                        </div>
-                        <div class="slider-pagination"></div>
-                    </div>
+                    <p class="rs-quote">"Szybka i profesjonalna obsługa. Skupili moje auto w ciągu 2 godzin od zgłoszenia. Polecam!"</p>
+                    <span class="rs-author">Marek Z. / Anna K. / Piotr W.</span>
                 </div>
             </div>
         </section>
@@ -235,18 +330,24 @@
         <!-- FAQ -->
         <section class="rs-section rs-faq bg-dark-rs">
             <div class="container">
-                <h2 class="rs-title-section">FAQ</h2>
+                <h2 class="rs-title-section">CZĘSTO ZADAWANE <span class="outline">PYTANIA (FAQ)</span></h2>
                 <div class="rs-faq-list">
-                    <div class="rs-faq-item">
-                        <h3 class="rs-faq-q">Jakie dokumenty są potrzebne przy sprzedaży auta?</h3>
+                    <div class="rs-faq-item" data-aos-custom="fade-up">
+                        <h3 class="rs-faq-q">Jakie dokumenty są potrzebne przy sprzedaży auta do skupu?</h3>
                         <div class="rs-faq-a">
-                            <p>Przygotuj: dowód rejestracyjny, kartę pojazdu, polisę OC oraz dowód osobisty. My dbamy o resztę formalności.</p>
+                            <p>Aby transakcja przebiegła sprawnie, przygotuj: dowód rejestracyjny pojazdu, kartę pojazdu (jeśli została wydana), ważną polisę OC oraz swój dowód osobisty. W przypadku, gdy auto ma współwłaściciela, konieczna będzie jego obecność lub pisemne upoważnienie. Nasz <strong>skup aut Częstochowa</strong> dba o wszystkie formalności, przygotowując legalną umowę kupna-sprzedaży.</p>
                         </div>
                     </div>
-                    <div class="rs-faq-item">
-                        <h3 class="rs-faq-q">Jak szybko przyjedzie laweta?</h3>
+                    <div class="rs-faq-item" data-aos-custom="fade-up">
+                        <h3 class="rs-faq-q">Czy skupujecie auta uszkodzone, powypadkowe i bez OC?</h3>
                         <div class="rs-faq-a">
-                            <p>W obrębie Częstochowy zazwyczaj docieramy w 15-30 minut.</p>
+                            <p>Tak, nasz <strong>skup samochodów Częstochowa</strong> przyjmuje pojazdy w każdym stanie. Skupujemy auta z uszkodzonym silnikiem, skrzynią biegów, po kolizjach, a także te, które od dłuższego czasu stoją nieużywane i nie posiadają ważnego przeglądu technicznego lub ubezpieczenia OC. Dysponujemy własnymi lawetami, więc odbiór nienadającego się do jazdy auta nie jest dla nas problemem.</p>
+                        </div>
+                    </div>
+                    <div class="rs-faq-item" data-aos-custom="fade-up">
+                        <h3 class="rs-faq-q">Jak szybko mogę liczyć na przyjazd lawety w Częstochowie?</h3>
+                        <div class="rs-faq-a">
+                            <p>Działamy w trybie alarmowym. Nasza <strong>pomoc drogowa Częstochowa</strong> zazwyczaj dociera do klienta w obrębie miasta w czasie od 15 do 30 minut. Na trasach szybkiego ruchu i autostradzie A1 czas ten zależy od natężenia ruchu, ale zawsze staramy się być jak najszybciej, by zapewnić Ci bezpieczeństwo.</p>
                         </div>
                     </div>
                 </div>
@@ -259,11 +360,11 @@
             <div class="rs-footer-top">
                 <div class="rs-footer-info">
                     <img src="logo.webp" alt="DAWDAN-CARS" width="200">
-                    <p>Profesjonalne usługi motoryzacyjne w Częstochowie i na całym Śląsku. Jesteśmy do Twojej dyspozycji 24 godziny na dobę, 7 dni w tygodniu.</p>
+                    <p>Profesjonalne usługi motoryzacyjne w Częstochowie i na całym Śląsku. Jesteśmy do Twojej dyspozycji 24 godziny na dobę, 7 dni w tygodniu. Gwarancja satysfakcji i najniższych cen.</p>
                 </div>
                 <div class="rs-footer-nav">
                     <div class="rs-nav-group">
-                        <h4>NAWIGACJA</h4>
+                        <h4>SITE MAP</h4>
                         <ul>
                             <li><a href="index.html">START</a></li>
                             <li><a href="o-nas.html">O NAS</a></li>
@@ -272,21 +373,31 @@
                         </ul>
                     </div>
                     <div class="rs-nav-group">
-                        <h4>KONTAKT</h4>
+                        <h4>CONTACT US</h4>
                         <ul>
                             <li><a href="tel:+48730035559">SKUP: 730 035 559</a></li>
                             <li><a href="tel:+48790676446">LAWETA: 790 676 446</a></li>
-                            <li>Częstochowa, Śląsk</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="rs-footer-bottom">
-                <p>&copy; 2025 DAWDAN-CARS. ALL RIGHTS RESERVED.</p>
+                <p>&copy; 2025 DAWDAN-CARS ENTERTAINMENT. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
 
-    <div class="rs-overlay"></div>
+    <div class="rs-overlay">
+        <nav class="rs-nav">
+            <ul>
+                <li><a href="index.html">START</a></li>
+                <li><a href="o-nas.html">O NAS</a></li>
+                <li><a href="skup-samochodow.html">SKUP AUT</a></li>
+                <li><a href="laweta-pomoc-drogowa.html">POMOC DROGOWA</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>
