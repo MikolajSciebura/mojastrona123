@@ -13,128 +13,123 @@
     <link rel="preload" as="style" href="style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="font-awesome.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="font-awesome.min.css"></noscript>
+
+    <link rel="preload" as="image" href="tlo.webp" fetchpriority="high" type="image/webp">
+
+    <!-- ICONS -->
     <link rel="icon" href="favicony/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicony/favicon-180x180.png">
+
     <script src="script.min.js" defer></script>
 </head>
-<body>
-    <header>
-        <div class="top-bar">
-            <div class="container">
+<body class="rs-theme">
+    <header class="rs-header">
+        <div class="container-fluid">
+            <div class="header-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="logo.webp" fetchpriority="high" alt="DAWDAN-CARS Częstochowa" width="349" height="60">
+                        <img src="logo.webp" fetchpriority="high" alt="DAWDAN-CARS" width="349" height="60">
                     </a>
                 </div>
-                <nav>
+                <nav class="rs-nav">
                     <ul>
-                        <li><a href="index.html">STRONA GŁÓWNA</a></li>
+                        <li><a href="index.html">START</a></li>
                         <li><a href="o-nas.html">O NAS</a></li>
-                        <li><a href="skup-samochodow.html">SKUP SAMOCHODÓW</a></li>
+                        <li><a href="skup-samochodow.html">SKUP AUT</a></li>
                         <li><a href="laweta-pomoc-drogowa.html">POMOC DROGOWA</a></li>
                         <li><a href="blog.html">BLOG</a></li>
                         <li><a href="kontakt.html">KONTAKT</a></li>
                     </ul>
                 </nav>
-                <button class="menu-toggle" aria-label="Otwórz menu">
-                    <span></span><span></span><span></span>
-                </button>
+                <div class="header-actions">
+                    <a href="tel:+48730035559" class="rs-btn rs-btn-primary">
+                        <span class="rs-btn-inner">SKUP: 730 035 559</span>
+                    </a>
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
-    <div class="overlay"></div>
 
-    <section class="page-header" style="background: linear-gradient(rgba(11, 19, 43, 0.8), rgba(11, 19, 43, 0.8)), url('tlo.webp');">
-        <div class="container">
-            <h1>Pomoc Drogowa, Laweta i Holowanie w Częstochowie</h1>
-            <p>Niezawodne wsparcie drogowe 24/7 dla kierowców w całym regionie śląskim</p>
-        </div>
-    </section>
-
-    <article class="about-content">
-        <div class="container">
-            <div class="seo-text-block" style="margin-bottom: 40px;">
-                <a href="blog.html" class="btn-outline" style="display: inline-block; margin-bottom: 20px;"><i class="fas fa-arrow-left"></i> Powrót do bloga</a>
-
-                <h2>Kompleksowa Pomoc Drogowa Częstochowa – zawsze tam, gdzie nas potrzebujesz</h2>
-                <p>Awaria samochodu w najmniej oczekiwanym momencie to koszmar każdego kierowcy. Czy to pęknięta opona na drodze krajowej DK1, czy nagła usterka silnika na trasie A1 – nasza <strong>pomoc drogowa Częstochowa</strong> jest przygotowana na każdą ewentualność. Działamy 24 godziny na dobę, 7 dni w tygodniu, dostarczając profesjonalne usługi transportowe i naprawcze dla pojazdów osobowych, dostawczych oraz motocykli.</p>
-
-                <h3>Dlaczego warto wezwać DAWDAN-CARS w Częstochowie?</h3>
-                <p>Na rynku istnieje wiele firm oferujących holowanie, ale tylko nieliczne zapewniają tak wysoki standard bezpieczeństwa i szybkość reakcji jak my. Nasza <strong>laweta Częstochowa</strong> to nowoczesna platforma wyposażona w najlepszy sprzęt do załadunku, co eliminuje ryzyko uszkodzenia Twojego auta podczas transportu. Wybierając nas, masz pewność, że pomoc dotrze do Ciebie w czasie 15-30 minut na terenie miasta.</p>
-
-                <h3>Szeroki zakres usług naszej pomocy drogowej:</h3>
-                <ul>
-                    <li><strong>Holowanie Częstochowa i okolice:</strong> Transportujemy pojazdy pod wskazany adres, do warsztatu lub pod dom klienta.</li>
-                    <li><strong>Pomoc na autostradzie A1:</strong> Przeczytaj nasze rady o tym, jak przebiega <a href="holowanie-na-autostradzie-a1-przepisy.html">holowanie na autostradzie</a> – pamiętaj, że na A1 linka holownicza jest zabroniona!</li>
-                    <li><strong>Awaryjne uruchamianie silnika:</strong> Jeśli Twój akumulator odmówił posłuszeństwa, przyjedziemy z profesjonalnym boosterem (12V/24V).</li>
-                    <li><strong>Wymiana koła i drobne naprawy:</strong> Jeśli usterka jest prosta, usuniemy ją na miejscu, oszczędzając Ci kosztów holowania.</li>
-                    <li><strong>Dowóz paliwa i pomoc przy złym zatankowaniu:</strong> Pomylone paliwo? Odessamy je i pomożemy uruchomić auto.</li>
-                    <li><strong>Wyciąganie z rowu:</strong> Posiadamy mocne wciągarki, które poradzą sobie z autem poza drogą.</li>
-                </ul>
-
-                <h3>Ile kosztuje laweta w Częstochowie?</h3>
-                <p>Stawiamy na jasne zasady. Każdy wyjazd jest wyceniany indywidualnie podczas rozmowy telefonicznej, dzięki czemu unikasz przykrych niespodzianek przy rozliczeniu. Jeśli chcesz poznać orientacyjne stawki, sprawdź nasz aktualny <a href="ile-kosztuje-laweta-czestochowa.html">cennik lawety 2025</a>. Pamiętaj, że dla poszkodowanych w kolizjach oferujemy holowanie z OC sprawcy (bezgotówkowo).</p>
-
-                <h3>Wsparcie po kolizji i wypadku</h3>
-                <p>Znalazłeś się w trudnej sytuacji na drodze? Zobacz nasz poradnik: <a href="kolizja-czestochowa-co-robic.html">kolizja w Częstochowie krok po kroku</a>. Pomożemy Ci nie tylko z transportem, ale również z zabezpieczeniem miejsca zdarzenia i formalnościami ubezpieczeniowymi. Jeśli Twoje auto po wypadku nie nadaje się do naprawy, nasz <strong>skup aut Częstochowa</strong> zaproponuje Ci uczciwą cenę za wrak.</p>
-
-                <h3>Gdzie działamy?</h3>
-                <p>Nasza baza znajduje się w <strong>Częstochowie</strong>, co pozwala nam na błyskawiczną obsługę dzielnic takich jak: Północ, Tysiąclecie, Raków, Stradom, Gnaszyn czy Częstochówka-Parkitka. Regularnie pomagamy też kierowcom w miejscowościach ościennych: Kłobuck, Myszków, Blachownia, Mstów oraz na całej długości śląskiego odcinka autostrady A1.</p>
-
-                <h3>Najczęstsze pytania kierowców (FAQ):</h3>
-                <div class="faq-section" style="margin: 30px 0; background: var(--accent-color); color: #fff; padding: 20px; border-radius: 8px;">
-                    <p><strong>1. Czy można holować auto na lince po mieście?</strong><br>
-                    Tak, ale musi ono mieć sprawne hamulce i układ kierowniczy. Jeśli silnik nie pracuje (brak wspomagania), zawsze zalecamy lawetę.</p>
-                    <p><strong>2. Jak długo będę czekać na lawetę?</strong><br>
-                    W Częstochowie średni czas dojazdu to 20 minut. Na autostradę A1 docieramy zazwyczaj do 30 minut.</p>
-                    <p><strong>3. Czy wystawiacie faktury VAT?</strong><br>
-                    Tak, za każdą usługę wystawiamy fakturę VAT lub paragon, co jest niezbędne do rozliczenia z ubezpieczalnią lub w firmie.</p>
+    <main>
+        <section class="rs-hero rs-hero-sub">
+            <div class="shard-layer shard-1"></div>
+            <div class="container hero-container">
+                <div class="hero-content-rs" data-aos-custom="fade-up">
+                    <h1 class="rs-title-main">POMOC <span class="outline">24/7</span></h1>
+                    <p class="rs-subtitle">LAWETA CZĘSTOCHOWA I OKOLICE</p>
                 </div>
+            </div>
+        </section>
 
-                <div style="margin-top: 30px; text-align: center;">
-                    <a href="tel:+48790676446" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Zadzwoń po pomoc: 790 676 446</a>
-                </div>
+    <article class="rs-section bg-dark-rs">
+        <div class="container">
+            <div class="rs-text-wrap" data-aos-custom="fade-up">
+                <a href="blog.html" class="rs-link" style="margin-bottom: 40px; display: inline-block;">← POWRÓT DO BLOGA</a>
+                <h2 class="rs-title-section">Niezawodna <span class="highlight">Pomoc Drogowa</span></h2>
+                <div style="text-align: left; color: var(--text-dim);">
+                    <p>Awaria samochodu w najmniej oczekiwanym momencie to koszmar każdego kierowcy. Czy to pęknięta opona na drodze krajowej DK1, czy nagła usterka silnika na trasie A1 – nasza <strong>pomoc drogowa Częstochowa</strong> jest przygotowana na każdą ewentualność.</p>
 
-                <div class="related-posts" style="margin-top: 50px; border-top: 1px solid var(--primary-color); pt-30px;">
-                    <h3>Czytaj także:</h3>
-                    <ul>
-                        <li><a href="laweta-porady.html">Laweta czy holowanie na linie – co wybrać?</a></li>
-                        <li><a href="pomoc-drogowa-porady.html">Co zrobić po awarii na drodze? Poradnik bezpieczeństwa</a></li>
-                        <li><a href="skup-samochodow-czestochowa-gotowka.html">Szybki skup aut uszkodzonych i powypadkowych</a></li>
+                    <h3 class="highlight" style="margin: 30px 0 15px;">Zakres usług:</h3>
+                    <ul class="rs-list" style="font-size: 1.2rem;">
+                        <li>HOLOWANIE I LAWETA</li>
+                        <li>AWARYJNE ODPALANIE 12V/24V</li>
+                        <li>DOWÓZ PALIWA</li>
+                        <li>WYMIANA KOŁA NA TRASIE</li>
                     </ul>
+
+                    <h3 class="highlight" style="margin: 30px 0 15px;">Dojazd w 15 minut</h3>
+                    <p>Wybierając nas, masz pewność, że pomoc dotrze do Ciebie w czasie 15-30 minut na terenie miasta Częstochowa.</p>
+                </div>
+
+                <div style="margin-top: 50px;">
+                    <a href="tel:+48790676446" class="rs-btn rs-btn-primary"><span>WEZWIJ POMOC: 790 676 446</span></a>
                 </div>
             </div>
         </div>
     </article>
+    </main>
 
-        <footer>
+    <footer class="rs-footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Częstochowa, Śląsk i okolice</p>
-                    <p><i class="fas fa-phone"></i> Skup samochodów: 730 035 559</p>
-                    <p><i class="fas fa-phone"></i> Pomoc Drogowa: 790 676 446</p>
+            <div class="rs-footer-top">
+                <div class="rs-footer-info">
+                    <img src="logo.webp" alt="DAWDAN-CARS" width="200">
+                    <p>Profesjonalne usługi motoryzacyjne w Częstochowie i na całym Śląsku. Jesteśmy do Twojej dyspozycji 24 godziny na dobę, 7 dni w tygodniu.</p>
                 </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="index.html">Strona Główna</a></li><li><a href="o-nas.html">O nas</a></li><li><a href="skup-samochodow.html">Skup Aut</a></li><li><a href="laweta-pomoc-drogowa.html">Pomoc Drogowa</a></li><li><a href="blog.html">Blog</a></li><li><a href="kontakt.html">Kontakt</a></li>
-                        <li><a href="#">Regulamin</a></li><li><a href="#">Polityka Prywatności</a></li>
-                    </ul>
-                </div>
-                <div class="footer-hours">
-                    <div class="hours-box">
-                        <i class="far fa-clock"></i>
-                        <span>24/7</span>
-                        <p>Odbiorów i zgłoszeń</p>
+                <div class="rs-footer-nav">
+                    <div class="rs-nav-group">
+                        <h4>NAWIGACJA</h4>
+                        <ul>
+                            <li><a href="index.html">START</a></li>
+                            <li><a href="o-nas.html">O NAS</a></li>
+                            <li><a href="skup-samochodow.html">SKUP AUT</a></li>
+                            <li><a href="laweta-pomoc-drogowa.html">POMOC DROGOWA</a></li>
+                        </ul>
+                    </div>
+                    <div class="rs-nav-group">
+                        <h4>KONTAKT</h4>
+                        <ul>
+                            <li><a href="tel:+48730035559">SKUP: 730 035 559</a></li>
+                            <li><a href="tel:+48790676446">LAWETA: 790 676 446</a></li>
+                            <li>Częstochowa, Śląsk</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 DAWDAN-CARS. Wszelkie prawa zastrzeżone</p>
+            <div class="rs-footer-bottom">
+                <p>&copy; 2025 DAWDAN-CARS. ALL RIGHTS RESERVED.</p>
             </div>
         </div>
     </footer>
+
+    <div class="rs-overlay"></div>
 </body>
 </html>
